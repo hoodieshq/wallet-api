@@ -3,6 +3,7 @@ import type { RawSuiTransaction, SuiTransaction } from "./types";
 
 export function serializeSuiTransaction({
   amount,
+  coinType,
   recipient,
   family,
   mode,
@@ -10,6 +11,7 @@ export function serializeSuiTransaction({
 }: SuiTransaction): RawSuiTransaction {
   return {
     amount: amount.toString(),
+    coinType,
     recipient,
     family,
     mode,
@@ -19,6 +21,7 @@ export function serializeSuiTransaction({
 
 export function deserializeSuiTransaction({
   amount,
+  coinType,
   recipient,
   family,
   mode,
@@ -26,6 +29,7 @@ export function deserializeSuiTransaction({
 }: RawSuiTransaction): SuiTransaction {
   return {
     amount: new BigNumber(amount),
+    coinType,
     recipient,
     family,
     mode,

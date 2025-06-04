@@ -5,6 +5,7 @@ import type { schemaRawSuiTransaction } from "./validation";
 
 export type SuiTransaction = TransactionCommon & {
   readonly family: RawSuiTransaction["family"];
+  coinType: string;
   mode: string;
   fees?: BigNumber;
 };
